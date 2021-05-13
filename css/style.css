@@ -305,38 +305,10 @@ i:hover, #menu-box li:hover{
 	font-family: 'Segoe Script';
 	font-weight: bold;
 }
-/*review page*/
-.has-review{
-	display: block;
+.register{
+	width: 300px !important;
+	margin: 0 auto !important;
+}
+.register legend{
 	text-align: center;
-	margin: 2rem auto !important;
-	color: #555555;
-	text-shadow: 1px 2px #ccc;
-}
-.has-review span{
-	font-size: 28px;
-}
-.review-box{
-	display: flex;
-	justify-content: space-around !important;
-	margin: 2rem 4rem;
-}
-.review-box > div{
-	line-height: 1.7;
-}
-.review-box img{
-	border-radius: 100%;
-	height: 80px;
-	width: 80px;
-}
-.review-box > div:first-child{
-	width: 80%;
-}
-.read_more{
-	color: #2299fb;
-	cursor: pointer;
-}
-.read_more:hover{
-	color: #555555;
-	transition: 0.5s;
 }

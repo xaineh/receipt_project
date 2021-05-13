@@ -28,7 +28,7 @@
 						<a href="#affiliate">Our Affiliate</a>
 					</li>
 					<li>
-						<a href="review.php">Reviews</a>
+						<a href="review.php">Sign up</a>
 					</li>
 					<li>
 						<a href="#help">Help</a>
