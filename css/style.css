@@ -306,9 +306,16 @@ i:hover, #menu-box li:hover{
 	font-weight: bold;
 }
 .register{
-	width: 300px !important;
+	width: 500px !important;
 	margin: 0 auto !important;
 }
 .register legend{
 	text-align: center;
+}
+/*DASHBOARD PAGE*/
+.col-2{
+	column-count: 2;
+	flex-direction: row;
+	column-gap: 10px;
+	column-width: 400px;
 }

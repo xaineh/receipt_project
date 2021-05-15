@@ -1,6 +1,15 @@
 <?php
-require 'db.php';
-userSignUp();
+require_once('insert.php');
+require 'select.php';
+
+#holds the inputs of the uses
+$post_values = [
+'words' => '',
+'pas' => ''
+];
+if (isset($_POST) && !empty($_POST)) {
+	$post_values = $_POST;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,23 +22,27 @@ userSignUp();
     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=10'>
 </head>
 <body>
+	<div class="error">
+		<!-- For errors  -->
+		<?php echo $selectObj->error; ?>
+	</div>
 	<fieldset class="register">
 		<legend>Signup</legend>
 		<form method="post" action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>">
 			<table>
 				<tr>
 					<td>
-						<input type="text" name="words" placeholder="Enter suggested words" maxlength="20" value="<?php echo @$phrase; ?>"><br>
+						<input type="text" name="words" placeholder="Enter suggested words" value="<?= $post_values['words']; ?>" maxlength="25"><br>
 						<div class="error">
-							<?php echo $errPhrase; ?>
+							<?php echo $insertInstance->errPhrase; ?>
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<input type="password" name="pas" placeholder="Enter Your password" maxlength="15" value="<?php echo @$pas; ?>"><br>
+						<input type="password" name="pas" placeholder="Enter Your password" maxlength="25" value="<?= $post_values['pas']; ?>"><br>
 						<div class="error">
-							<?php echo $errPass; ?>
+							<?php echo $insertInstance->errPass; ?>
 						</div>
 					</td>
 				</tr>

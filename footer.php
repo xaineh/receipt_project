@@ -11,7 +11,7 @@
 					<li>Contact Address</li>
 				</ul>
 				<div>
-					<address>Alex Ekwueme Federal University Ndufu-alike Ikwo,<br> Abakaliki Ebonyi State. <b>Zone B</b></address>
+					<address>Alex Ekwueme Federal University Ndufu-Alike Ikwo,<br> Abakaliki Ebonyi State. <b>Zone B</b></address>
 				</div>
 				<div>
 					<b style="font-size: 18px;">Phone:</b> <span class="fon">+234 902 758 5555</span>

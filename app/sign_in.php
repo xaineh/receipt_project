@@ -1,5 +1,18 @@
 <?php
-require 'db.php';
+
+require_once('select.php');
+#instance for the SELECT CLASS-----------
+$selectObj = new Select();
+$selectObj->login("signin", "users", "index.php?msg=you have successfully login.");
+ #function
+#holds the inputs of the uses
+$post_values = [
+'words' => '',
+'pas' => ''
+];
+if (isset($_POST) && !empty($_POST)) {
+	$post_values = $_POST;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -8,7 +21,6 @@ require 'db.php';
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
-	<div class="error"><?php echo @$error; ?></div>
 	<div class="success">
 		<?php if (isset($_GET['msg'])) {
 			echo $_GET['msg'];
@@ -16,21 +28,24 @@ require 'db.php';
 	</div>
 	<fieldset class="register">
 		<legend>Sign in</legend>
+		<div class="error" style="text-align: center;">
+			<?php echo $selectObj->error; ?>
+		</div>
 		<form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']) ?>">
 			<table>
 				<tr>
 					<td>
-						<input type="text" name="words" placeholder="Enter suggested phrase" maxlength="20"value="<?php echo @$phrase; ?>"><br>
+						<input type="text" name="words" placeholder="Enter suggested phrase" maxlength="20" value="<?= $post_values['words']; ?>"><br>
 						<div class="error">
-							<?php echo @$errPhrase; ?>
+							<?php echo $selectObj->errPhrase; ?>
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<input type="password" name="pas" placeholder="Enter Your password" maxlength="20"value="<?php echo @$pas; ?>"><br>
+						<input type="password" name="pas" placeholder="Enter Your password" maxlength="20" value="<?= $post_values['pas']; ?>"><br>
 						<div class="error">
-							<?php echo @$errPass; ?>
+							<?php echo $selectObj->errPass; ?>
 						</div>
 					</td>
 				</tr>
