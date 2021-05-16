@@ -25,6 +25,7 @@ class Select extends Authenticate{
 				$_SESSION['phrase'] = $row['phrase'];
 				$_SESSION['pas'] = $row['password'];
 				if ($row['phrase'] === $phrase && $row['password'] === $pas) {
+	
 					header("location: $location");
 				}
 				else{

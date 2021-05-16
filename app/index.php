@@ -15,7 +15,8 @@
 </div>
 <nav>
 	<div class="col-2">
-		<div class="left_bar_handle">
+		<di 
+		v class="left_bar_handle">
 			fghjhgfds
 		</div>
 		<div class="right_description_handle">

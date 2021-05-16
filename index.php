@@ -9,6 +9,81 @@
     <link rel="icon" type="text/css" href="pix/icon.png">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="js/main.js"></script>
+    <script>
+    var _CONTENT = [ 
+	"\“Concentrate all your thoughts on the great desire in your life. This concentration must be continuous, unceasing – every minute; every hour; every day; every week.\” (Charles E. Popplestone)", 
+	"\“Whatever you can do, or dream you can, begin it. Boldness has genius, power and magic in it.\” (Johann Wolfgang von Goethe)", 
+	"\“There is one quality that one must possess to win, and that is definiteness of purpose, the knowledge of what one wants, and a burning desire to achieve it\” (Napoleon Hill)"
+];
+// Current sentence being processed
+var _PART = 0;
+
+// Character number of the current sentence being processed 
+var _PART_INDEX = 0;
+
+// Holds the handle returned from setInterval
+var _INTERVAL_VAL;
+
+// Element that holds the text
+var _ELEMENT = document.querySelector("#text");
+
+// Cursor element 
+var _CURSOR = document.querySelector("#cursor");
+
+// Implements typing effect
+function Type() { 
+	// Get substring with 1 characater added
+	var text =  _CONTENT[_PART].substring(0, _PART_INDEX + 1);
+	document.querySelector("#text").innerHTML = text;
+	_PART_INDEX++;
+
+	// If full sentence has been displayed then start to delete the sentence after some time
+	if(text === _CONTENT[_PART]) {
+		// Hide the cursor
+		document.querySelector("#cursor").style.display = 'none';
+
+		clearInterval(_INTERVAL_VAL);
+		setTimeout(function() {
+			_INTERVAL_VAL = setInterval(Delete, 50);
+		}, 250);
+	}
+}
+
+// Implements deleting effect
+function Delete() {
+	// Get substring with 1 characater deleted
+	var text =  _CONTENT[_PART].substring(0, _PART_INDEX - 1);
+	document.querySelector("#text").innerHTML = text;
+	_PART_INDEX--;
+
+	// If sentence has been deleted then start to display the next sentence
+	if(text === '') {
+		clearInterval(_INTERVAL_VAL);
+
+		// If current sentence was last then display the first one, else move to the next
+		if(_PART == (_CONTENT.length - 1))
+			{
+				_PART = 0;
+			}
+		else
+			{
+				_PART++;
+		
+		_PART_INDEX = 0;
+			}
+
+		// Start to display the next sentence after some time
+		setTimeout(function() {
+			var _CURSOR = document.querySelector("#cursor");
+			_CURSOR.style.display = 'inline-block';
+			_INTERVAL_VAL = setInterval(Type, 100);
+		}, 200);
+	}
+}
+
+// Start the typing effect on load
+_INTERVAL_VAL = setInterval(Type, 90);
+	</script>
 </head>
 <body onscroll="enhanceScrolTop()">
 	<nav class="header">
@@ -29,6 +104,11 @@
 					</li>
 					<li>
 						<a href="review.php">Sign up</a>
+						<ul>
+							<li>
+								<a href="#">Sign In</a>
+							</li>
+						</ul>
 					</li>
 					<li>
 						<a href="#help">Help</a>
@@ -48,6 +128,10 @@
 			<p style="color: white; font-size: 28px; padding-right: 4rem;">Our Vision</p>
 			<span class="vision">Your prime time: never goes waste</span>
 		</div>
+		<div id="container" style="width: 400px; padding: 0 1.4rem; margin-top: 2rem;">
+			<div style="color: white; font-size: 22px; text-transform: uppercase;">Your Payoff: &nbsp; <span style="font-weight: bold; font-size: 19px !important;">time management!</span></div>
+	<div id="text" style="color: white; font-family: cursive; text-decoration: underline;font-size: 15px; text-indent: 1rem; margin-top: 1rem;"></div><div id="cursor"></div>
+</div>
 	</section><!--END OF WALLPAPER-->
 	<h2 align="center"  class="about_title" style="margin-top: 8rem !important;">ease on...</h2>
 	<div class="description">
