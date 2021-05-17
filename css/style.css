@@ -312,14 +312,25 @@ i:hover, #menu-box li:hover{
 .register legend{
 	text-align: center;
 }
-/*DASHBOARD PAGE*/
-.col-2{
-	display: flex;
-	justify-content: flex-start;
+
+.dropbtn{
+	position: relative;
 }
-.left_bar_handle{
-	width: 300px;
-	background-color: #2299fb;
-	margin-right: 2rem;
-	color: white;
+.dropcontent{
+	padding: 1rem 0.8rem;
+	padding-top: 0.4rem !important;
+	border-radius: 0 0 4px 4px;
+	box-shadow: 1px 0px 16px 2px whitesmoke;
+	background-color: white;
+	position: absolute;
+	display: none;
+	width: 100px;
+}
+.dropcontent li{
+	margin-left: 0 !important;
+	padding-left: 0 !important;
+	display: block !important;
+}
+.dropbtn:hover .dropcontent{
+	display: block;
 }

@@ -6,6 +6,7 @@ session_start();
 require_once('connect.php');
 require_once('authenticate.php');
 class Select extends Authenticate{
+	public $error;
 	public function __construct(){
 		$serverObj = new Server();
 		$this->con = $serverObj->dbCon();
@@ -29,7 +30,7 @@ class Select extends Authenticate{
 					header("location: $location");
 				}
 				else{
-					echo "user id incoorect";
+					$this->error = "User ID Incorrect";
 				}
 			}
 		}

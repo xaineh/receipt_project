@@ -1,4 +1,4 @@
-var slide = (hide) =>{
+var hideAndShow = (hide) =>{
 	var hide = document.querySelector(hide);
 	if (hide.style.display =="block") {
 		hide.style.display = "none";
@@ -6,4 +6,10 @@ var slide = (hide) =>{
 		hide.style.display = "block";
 	}
 }
-//implemeent scroltoTop, shringPage and Text
+// var authenticateInput = {
+// 	phrase: "",
+// 	pas: "",
+	
+
+
+// }

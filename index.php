@@ -11,7 +11,7 @@
     <script src="js/main.js"></script>
     <script>
     var _CONTENT = [ 
-	"\“Concentrate all your thoughts on the great desire in your life. This concentration must be continuous, unceasing – every minute; every hour; every day; every week.\” (Charles E. Popplestone)", 
+	" (Benjamin Franklin), “\Do you love life? Then do not squander time, for that’s the stuff that life is made of.\”", 
 	"\“Whatever you can do, or dream you can, begin it. Boldness has genius, power and magic in it.\” (Johann Wolfgang von Goethe)", 
 	"\“There is one quality that one must possess to win, and that is definiteness of purpose, the knowledge of what one wants, and a burning desire to achieve it\” (Napoleon Hill)"
 ];
@@ -85,7 +85,7 @@ function Delete() {
 _INTERVAL_VAL = setInterval(Type, 90);
 	</script>
 </head>
-<body onscroll="enhanceScrolTop()">
+<body>
 	<nav class="header">
 		<div class="box-content">
 			<div>
@@ -102,11 +102,14 @@ _INTERVAL_VAL = setInterval(Type, 90);
 					<li>
 						<a href="#affiliate">Our Affiliate</a>
 					</li>
-					<li>
-						<a href="review.php">Sign up</a>
-						<ul>
+					<li class="dropbtn">
+						<a href="#">Account</a>
+						<ul class="dropcontent">
 							<li>
-								<a href="#">Sign In</a>
+								<a href="php/sign_up.php">Sign up</a>
+							</li>
+							<li>
+								<a href="php/sign_in.php">Sign In</a>
 							</li>
 						</ul>
 					</li>
@@ -198,7 +201,7 @@ _INTERVAL_VAL = setInterval(Type, 90);
 		<div class="qstion">
 			<ul>
 				<li>
-					<span onclick="slide('#hide')" id="show">
+					<span onclick="hideAndShow('#hide')" id="show">
 						<font class="entities"></font>Who do i get my receipt after sending the transaction ID?</span>
 					<div class="answer" id="hide">
 						giat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
